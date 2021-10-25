@@ -1,5 +1,6 @@
 package com.pkharat.shopping.controller;
 
+import com.pkharat.shopping.global.GlobalData;
 import com.pkharat.shopping.model.Role;
 import com.pkharat.shopping.model.User;
 import com.pkharat.shopping.repository.RoleRepository;
@@ -29,6 +30,7 @@ public class LoginController {
 
     @GetMapping("/login")
     public String login() {
+        GlobalData.cart.clear();
         return "login";
     }
 
