@@ -82,6 +82,8 @@ Docker, Docker Pipeline,docker-build-step,CloudBees Docker Build and Publish
 //Note: use Multibranch pipeline and just put your git repo url.
 Do variable changes and you can use jenkins build with docker image push..
 
+# SSL certificate integration
+
 SSL certificate setting applied in application.properties file
 To generate self signed SSL certificate use following command:
 ```
