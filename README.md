@@ -81,3 +81,17 @@ Docker, Docker Pipeline,docker-build-step,CloudBees Docker Build and Publish
 
 //Note: use Multibranch pipeline and just put your git repo url.
 Do variable changes and you can use jenkins build with docker image push..
+
+SSL certificate setting applied in application.properties file
+To generate self signed SSL certificate use following command:
+```
+cd src/resources
+keytool -genkeypair -alias local_ssl -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore loacal-ssl.p12 -validity 365 -ext san=dns:localhost
+```
+
+For production use following command and use p12 file in application
+Convert .crt to .p12
+```
+openssl pkcs12 -export -out server.p12 -inkey server.key -in server.crt
+```
+Where server.key , is the server key . server.crt is cert file from CA or self sigh
