@@ -97,3 +97,10 @@ Convert .crt to .p12
 openssl pkcs12 -export -out server.p12 -inkey server.key -in server.crt
 ```
 Where server.key , is the server key . server.crt is cert file from CA or self sigh
+
+#google login
+
+go to https://console.cloud.google.com/apis/credentials?project=shppingcart-springboot-school
+1. create new credentials
+2. Select "OAuth Client ID"
+3. use "Authorized redirect URIs" as this: http://localhost:8080/login/oauth2/code/google
