@@ -104,3 +104,21 @@ go to https://console.cloud.google.com/apis/credentials?project=shppingcart-spri
 1. create new credentials
 2. Select "OAuth Client ID"
 3. use "Authorized redirect URIs" as this: http://localhost:8080/login/oauth2/code/google
+
+# K8S Helm chart
+
+helm create shopping-cart-springboot
+
+docker build -t shopping-cart-springboot:v1 .
+https://chocolatey.org/install
+
+Install helm chart on windows 10 and docker desktop
+choco install kubernetes-helm
+
+helm create k8s-helm-chart
+helm install --name-template shopping-cart-springboot -f ./k8s-helm-chart/values.yaml ./k8s-helm-chart/
+helm ls --all
+helm upgrade shopping-cart-springboot ./k8s-helm-chart
+helm rollback shopping-cart-springboot 1
+helm uninstall shopping-cart-springboot
+helm package ./k8s-helm-chart
